@@ -51,28 +51,24 @@ export const PokemonPage = ({ pokemon }: Props) => {
                   alt={pokemon.name}
                   width={100}
                   height={100}
-                  loading="lazy"
                 />
                 <Image
                   src={pokemon.sprites.back_default}
                   alt={pokemon.name}
                   width={100}
                   height={100}
-                  loading="lazy"
                 />
                 <Image
                   src={pokemon.sprites.front_shiny}
                   alt={pokemon.name}
                   width={100}
                   height={100}
-                  loading="lazy"
                 />
                 <Image
                   src={pokemon.sprites.back_shiny}
                   alt={pokemon.name}
                   width={100}
                   height={100}
-                  loading="lazy"
                 />
               </Container>
             </Card.Body>
