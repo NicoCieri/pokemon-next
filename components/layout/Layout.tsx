@@ -14,10 +14,16 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
       <Head>
         <title>{title ? `Pokemon | ${title}` : "Pokemon"}</title>
         <meta name="author" content="Nicolas Cieri" />
-        <meta name="description" content={`Info about ${title}`} />
+        <meta
+          name="description"
+          content={`Info about ${title || "Pokemons"}`}
+        />
         <meta name="keywords" content={`${title}, pokemon, pokedex`} />
 
-        <meta property="og:title" content={`Info about ${title}`} />
+        <meta
+          property="og:title"
+          content={`Info about ${title || "Pokemons"}`}
+        />
         <meta
           property="og:description"
           content={`This is the page about ${title}`}
