@@ -30,7 +30,7 @@ const Navbar = () => {
 
         <NavbarComponent.Content>
           <NextLink href="/favorites" legacyBehavior>
-            <NavbarComponent.Link>Favoritos</NavbarComponent.Link>
+            <NavbarComponent.Link>Favorites</NavbarComponent.Link>
           </NextLink>
         </NavbarComponent.Content>
       </NavbarComponent>

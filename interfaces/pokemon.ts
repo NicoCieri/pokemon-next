@@ -1,4 +1,10 @@
 export interface Pokemon {
+  id: number;
+  name: string;
+  sprites: Sprites;
+}
+
+export interface FullPokemon {
   abilities: Ability[];
   base_experience: number;
   forms: Species[];

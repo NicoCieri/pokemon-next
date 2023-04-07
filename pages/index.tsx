@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout";
 import { pokeApi } from "@/api";
 import { PokemonListResponse, SmallPokemon } from "@/interfaces";
 import { PokemonCard } from "@/components/pokemon/PokemonCard";
+import { pokemonUtils } from "@/utils";
 
 interface Props {
   pokemons: SmallPokemon[];
@@ -11,7 +12,7 @@ interface Props {
 
 const HomePage: NextPage<Props> = (props) => {
   return (
-    <Layout title="Listado de Pokemons">
+    <Layout>
       <Grid.Container gap={2} justify="flex-start">
         {props.pokemons.map((pokemon) => (
           <PokemonCard pokemon={pokemon} key={pokemon.id} />
@@ -26,9 +27,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const pokemons: SmallPokemon[] = data.results.map((pokemon, i) => ({
     ...pokemon,
     id: i + 1,
-    img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-      i + 1
-    }.svg`,
+    img: pokemonUtils.getMainImg(i + 1),
   }));
 
   return {
