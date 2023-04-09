@@ -40,7 +40,7 @@ const PokemonDetailPage = ({ pokemon }: Props) => {
     <Layout title={strings.capitalize(pokemon.name)}>
       <Grid.Container css={{ marginTop: "5px" }} gap={2}>
         <Grid xs={12} sm={4}>
-          <Card isHoverable css={{ padding: "30px" }}>
+          <Card isHoverable css={{ padding: "0px" }}>
             <Card.Body>
               <Card.Image
                 src={
@@ -49,7 +49,7 @@ const PokemonDetailPage = ({ pokemon }: Props) => {
                 }
                 alt="pokemon.name"
                 width="100%"
-                height={200}
+                height={250}
               />
             </Card.Body>
           </Card>

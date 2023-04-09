@@ -59,7 +59,7 @@ const FavoritesPage = ({ pokemons }: FavoritesPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { data } = await pokeApi.get<PokemonListResponse>("pokemon?limit=151");
+  const { data } = await pokeApi.get<PokemonListResponse>("pokemon?limit=1000");
 
   const pokemons: SmallPokemonsById = data.results.reduce<SmallPokemonsById>(
     (acc, pokemon, i) => {
