@@ -11,7 +11,7 @@ interface Props {
   pokemon: Pokemon;
 }
 
-export const PokemonByNamePage = ({ pokemon }: Props) => {
+const PokemonDetailPage = ({ pokemon }: Props) => {
   const [isInfavorites, setIsInFavorites] = useState(false);
 
   const onToggleFavorite = () => {
@@ -109,26 +109,4 @@ export const PokemonByNamePage = ({ pokemon }: Props) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const { data } = await pokeApi.get<PokemonListResponse>("pokemon?limit=151");
-  const paths = data.results.map(({ name }) => ({ params: { name } }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { name } = params as { name: string };
-
-  const pokemon = await getPokemon(name);
-
-  return {
-    props: {
-      pokemon,
-    },
-  };
-};
-
-export default PokemonByNamePage;
+export default PokemonDetailPage;
